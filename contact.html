@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — DS Designs</title>
+<meta name="description" content="Get in touch with DS Designs to start a conversation about your architecture or interiors project.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img src="images/logo.png" alt="DS Designs" class="logo-img"><span class="logo-text">DS <span>Designs</span></span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<main>
+  <section class="section" style="padding-bottom:0;">
+    <div class="wrap">
+      <p class="eyebrow" id="contact-hero-eyebrow">Get in touch</p>
+      <h1 id="contact-hero-title" style="font-style:italic; font-size:clamp(2.2rem,4.4vw,3.4rem); margin-top:0.6rem; max-width:640px;">
+        Tell us about your project.
+      </h1>
+      <p id="contact-hero-subtitle" style="max-width:760px; color:var(--ink-soft); margin-top:1rem;">Get in touch with DS Designs to start a conversation about your architecture or interiors project.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap contact-grid">
+      <form id="contact-form" novalidate>
+        <div class="form-row">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-row">
+          <label for="project-type">Project type</label>
+          <select id="project-type" name="projectType">
+            <option value="Residential">Residential</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Interiors">Interiors</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-solid">Send message</button>
+        <p id="form-status" class="form-status"></p>
+      </form>
+
+      <div class="contact-info">
+        <p class="eyebrow">Direct contact</p>
+        <dl>
+          <dt>Email</dt>
+          <dd><a id="contact-info-email" href="mailto:hello@dsdesigns.studio">hello@dsdesigns.studio</a></dd>
+          <dt>Phone</dt>
+          <dd><a id="contact-info-phone" href="tel:+910000000000">+91 00000 00000</a></dd>
+          <dt>Studio</dt>
+          <dd id="contact-info-address">Bhavnagar, Gujarat, India</dd>
+          <dt>Hours</dt>
+          <dd id="contact-info-hours">Monday – Saturday, 10am – 7pm</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>DS Designs</h4>
+        <p>An architecture and interior design studio working across residential, commercial, and interior projects in Gujarat.</p>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="about.html">About &amp; Vision</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a id="footer-email" href="mailto:auminterieurs@gmail.com">auminterieurs@gmail.com</a></li>
+          <li><a id="footer-phone" href="tel:+919879960015">+91 9879960015</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio Hours</h4>
+        <ul>
+          <li id="footer-hours">Mon — Sat, 10am – 7pm</li>
+          <li id="footer-address">Rajkot, Gujarat, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> DS Designs</span>
+      <a href="admin.html" target="_blank" rel="noopener">Admin</a>
+      <span id="footer-tagline">Architecture · Interiors · Planning</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/projects-data.js"></script>
+<script src="js/site-content.js"></script>
+<script src="js/db.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+

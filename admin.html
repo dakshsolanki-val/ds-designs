@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — DS Designs</title>
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- ============================================================
+     LOGIN SCREEN
+     ============================================================ -->
+<div id="screen-login">
+  <div class="login-box">
+    <a class="login-logo" href="index.html"><img src="images/logo.png" alt="DS Designs" class="logo-img"><span class="logo-text">DS <span>Designs</span></span></a>
+    <div class="login-sub">Admin Panel</div>
+    <form id="login-form" novalidate>
+      <div class="form-row">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" autocomplete="email" required>
+      </div>
+      <div class="form-row">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" autocomplete="current-password" required>
+      </div>
+      <button class="btn-login" id="btn-login" type="submit">Sign In</button>
+      <p id="login-error"></p>
+    </form>
+  </div>
+</div>
+
+<!-- ============================================================
+     DASHBOARD
+     ============================================================ -->
+<div id="screen-dashboard" class="hidden">
+
+  <!-- Header -->
+  <header class="admin-header">
+    <div class="admin-header-left">
+      <a href="index.html" class="admin-logo-link"><img src="images/logo.png" alt="DS Designs" class="admin-logo-img"><span class="logo-text">DS <span>Designs</span></span></a>
+      <span class="admin-badge">Admin Panel</span>
+    </div>
+    <div class="admin-header-right">
+      <span class="admin-user" id="admin-user-email"></span>
+      <button class="btn-signout" id="btn-view-inquiries" type="button">Contact Inquiries</button>
+      <button class="btn-signout" id="btn-signout">Sign Out</button>
+      <a href="index.html" target="_blank" class="btn-signout" style="text-decoration:none;">View Site ↗</a>
+    </div>
+  </header>
+
+  <!-- Body: sidebar + main -->
+  <div class="admin-body">
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-top">
+        <button class="btn-new-project" id="btn-new-project">+ Add New Project</button>
+        <button class="btn-responses" id="btn-sidebar-responses" type="button">Responses</button>
+        <div class="sidebar-search">
+          <input type="text" id="sidebar-search" placeholder="Search projects…">
+        </div>
+      </div>
+      <div class="sidebar-label">All Projects</div>
+      <div class="project-list" id="project-list"></div>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="admin-main">
+
+      <!-- Welcome screen -->
+      <div id="view-welcome" class="admin-view">
+        <div id="view-welcome-inner">
+          <p class="eyebrow">Welcome back</p>
+          <h1>DS Designs Studio</h1>
+          <p>Select a project from the sidebar to edit it, or click <strong>Add New Project</strong> to create one.</p>
+          <div class="welcome-stats">
+            <div class="stat-box"><span class="num" id="stat-total">—</span><span class="lbl">Total Projects</span></div>
+            <div class="stat-box"><span class="num" id="stat-res">—</span><span class="lbl">Residential</span></div>
+            <div class="stat-box"><span class="num" id="stat-com">—</span><span class="lbl">Commercial</span></div>
+            <div class="stat-box"><span class="num" id="stat-int">—</span><span class="lbl">Interiors</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add / Edit form -->
+      <div id="view-form" class="admin-view hidden">
+        <div class="form-header">
+          <div>
+            <p class="eyebrow" id="form-eyebrow">New Project</p>
+            <h2 id="form-title-heading">Add a new project</h2>
+          </div>
+          <div class="form-header-actions">
+            <button class="btn btn-danger hidden" id="btn-delete-project">Delete</button>
+            <button class="btn" id="btn-cancel-form">Cancel</button>
+            <button class="btn btn-primary" id="btn-save-project">Save Project</button>
+          </div>
+        </div>
+
+        <!-- 1. Project info -->
+        <div class="form-section">
+          <p class="form-section-title">Project Information</p>
+          <div class="form-row-grid">
+            <div class="form-row">
+              <label class="field-label" for="f-title">Project Title <span style="color:var(--danger)">*</span></label>
+              <input type="text" id="f-title" placeholder="e.g. The Lantern House">
+            </div>
+            <div class="form-row">
+              <label class="field-label" for="f-id">URL Slug (auto-filled) <span style="color:var(--danger)">*</span></label>
+              <input type="text" id="f-id" placeholder="lantern-house">
+              <p class="field-hint">Used in project URLs. Lowercase, no spaces.</p>
+            </div>
+          </div>
+          <div class="form-row-grid-3">
+            <div class="form-row">
+              <label class="field-label" for="f-category">Category</label>
+              <select id="f-category">
+                <option value="Residential">Residential</option>
+                <option value="Commercial">Commercial</option>
+                <option value="Interiors">Interiors</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label class="field-label" for="f-year">Year Completed</label>
+              <input type="number" id="f-year" min="2000" max="2099" value="2024">
+            </div>
+            <div class="form-row">
+              <label class="field-label" for="f-location">Location</label>
+              <input type="text" id="f-location" placeholder="e.g. Rajkot , Gujarat">
+            </div>
+          </div>
+          <div class="form-row">
+            <label class="field-label" for="f-brief">One-line Brief</label>
+            <input type="text" id="f-brief" placeholder="e.g. A family home built around a single courtyard of light.">
+            <p class="field-hint">Short description shown on project cards.</p>
+          </div>
+        </div>
+
+        <!-- 2. Specs -->
+        <div class="form-section">
+          <p class="form-section-title">Specifications</p>
+          <div class="form-row-grid-3">
+            <div class="form-row">
+              <label class="field-label" for="f-area">Area</label>
+              <input type="text" id="f-area" placeholder="e.g. 3,800 sq.ft">
+            </div>
+            <div class="form-row">
+              <label class="field-label" for="f-duration">Duration</label>
+              <input type="text" id="f-duration" placeholder="e.g. 14 months">
+            </div>
+            <div class="form-row">
+              <label class="field-label" for="f-scope">Scope</label>
+              <input type="text" id="f-scope" placeholder="e.g. Architecture + Interiors">
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Story paragraphs -->
+        <div class="form-section">
+          <p class="form-section-title">The Thinking Behind It</p>
+          <p class="field-hint" style="margin-bottom:1rem;">Write 2–4 paragraphs explaining the brief, the design decisions, and what made this project distinct. This appears on the project detail page.</p>
+          <div id="story-paragraphs"></div>
+          <button type="button" class="btn-add-para" id="btn-add-para">+ Add Paragraph</button>
+        </div>
+
+        <!-- 4. Images -->
+        <div class="form-section">
+          <p class="form-section-title">Project Images</p>
+          <p class="field-hint" style="margin-bottom:1rem;">Upload your project photos. The first image (or one you mark as "Cover") will appear on gallery cards and the detail page header.</p>
+          <div class="upload-zone" id="upload-zone">
+            <input type="file" id="image-upload-input" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" multiple>
+            <div class="upload-icon">↑</div>
+            <p>Drag &amp; drop photos here, or click to browse</p>
+            <p style="margin-top:0.3rem; opacity:0.6;">JPG, PNG, WebP — up to 50 MB each</p>
+          </div>
+          <p class="upload-progress" id="upload-progress"></p>
+          <div class="image-preview-grid" id="image-preview-grid"></div>
+        </div>
+
+      </div><!-- /view-form -->
+
+      <!-- Contact Inquiries View -->
+      <div id="view-inquiries" class="admin-view hidden">
+        <div class="form-header">
+          <div>
+            <p class="eyebrow">Contact Form Submissions</p>
+            <h2>Manage inquiries</h2>
+          </div>
+          <div class="form-header-actions">
+            <button class="btn" id="btn-back-inquiries" type="button">Back</button>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <p class="form-section-title">Recent Submissions</p>
+          <p class="field-hint" style="margin-bottom:1rem;">All contact form submissions from your website. Click a row to view full details or delete.</p>
+          <div id="inquiries-table-container" style="overflow-x: auto;">
+            <table id="inquiries-table" style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+              <thead>
+                <tr style="border-bottom: 2px solid #ddd;">
+                  <th style="padding:0.8rem; text-align:left; font-weight:600;">Name</th>
+                  <th style="padding:0.8rem; text-align:left; font-weight:600;">Email</th>
+                  <th style="padding:0.8rem; text-align:left; font-weight:600;">Project Type</th>
+                  <th style="padding:0.8rem; text-align:left; font-weight:600;">Response</th>
+                  <th style="padding:0.8rem; text-align:left; font-weight:600;">Date</th>
+                  <th style="padding:0.8rem; text-align:center; font-weight:600;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="inquiries-body">
+              </tbody>
+            </table>
+          </div>
+          <p id="inquiries-empty" style="padding:1.2rem; color:#7a6f6a; text-align:center;">No submissions yet.</p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- Toast notification -->
+<div class="toast" id="toast"></div>
+
+<!-- Delete confirmation modal -->
+<div class="modal-overlay hidden" id="delete-modal">
+  <div class="modal-box">
+    <h3>Delete this project?</h3>
+    <p>You're about to permanently delete <strong id="delete-project-name"></strong>. This cannot be undone.</p>
+    <div class="modal-actions">
+      <button class="btn" id="btn-cancel-delete">Cancel</button>
+      <button class="btn btn-danger" id="btn-confirm-delete">Yes, Delete</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/projects-data.js"></script>
+<script src="js/site-content.js"></script>
+<script src="js/db.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
+

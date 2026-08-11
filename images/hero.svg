@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100">
+<rect width="1800" height="1100" fill="#EFE9DD"/>
+<rect x="0" y="0" width="1800" height="1100" fill="#C9C2B2" opacity="0.18"/>
+<line x1="0" y1="133" x2="1800" y2="133" stroke="#C9C2B2" stroke-width="1" opacity="0.5"/><line x1="0" y1="263" x2="1800" y2="263" stroke="#C9C2B2" stroke-width="1" opacity="0.5"/><line x1="0" y1="393" x2="1800" y2="393" stroke="#C9C2B2" stroke-width="1" opacity="0.5"/><line x1="0" y1="523" x2="1800" y2="523" stroke="#C9C2B2" stroke-width="1" opacity="0.5"/><line x1="0" y1="653" x2="1800" y2="653" stroke="#C9C2B2" stroke-width="1" opacity="0.5"/><line x1="0" y1="783" x2="1800" y2="783" stroke="#C9C2B2" stroke-width="1" opacity="0.5"/>
+<g stroke="#9C7A3C" stroke-width="1.5">
+<line x1="40" y1="40" x2="70" y2="40"/><line x1="55" y1="25" x2="55" y2="55"/>
+<line x1="1730" y1="1060" x2="1760" y2="1060"/><line x1="1745" y1="1045" x2="1745" y2="1075"/>
+</g>
+<text x="50%" y="46%" text-anchor="middle" font-family="Georgia, serif" font-size="44" fill="#1F2421" letter-spacing="2">DS DESIGNS</text>
+<text x="50%" y="53%" text-anchor="middle" font-family="Courier New, monospace" font-size="16" fill="#1F2421" letter-spacing="3" opacity="0.7">FLAGSHIP PROJECT — REPLACE WITH HERO PHOTO</text>
+</svg>

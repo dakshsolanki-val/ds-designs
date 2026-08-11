@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — DS Designs</title>
+<meta name="description" content="Browse residential, commercial, and interior projects by DS Designs.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img src="images/logo.png" alt="DS Designs" class="logo-img"><span class="logo-text">DS <span>Designs</span></span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<main>
+  <section class="section" style="padding-bottom:0;">
+    <div class="wrap">
+      <p class="eyebrow">Our work</p>
+      <h1 style="font-style:italic; font-size:clamp(2.2rem,4.4vw,3.4rem); margin-top:0.6rem; max-width:640px;">
+        Every project here was finished twice — once on paper, once on site.
+      </h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="All">All</button>
+        <button class="filter-btn" data-filter="Residential">Residential</button>
+        <button class="filter-btn" data-filter="Commercial">Commercial</button>
+        <button class="filter-btn" data-filter="Interiors">Interiors</button>
+      </div>
+      <div class="project-grid" id="project-grid"></div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Don't see what you're looking for?</h2>
+      <a class="btn btn-solid" href="contact.html">Tell us about your project</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>DS Designs</h4>
+        <p>An architecture and interior design studio working across residential, commercial, and interior projects in Gujarat.</p>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="about.html">About &amp; Vision</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a id="footer-email" href="mailto:auminterieurs@gmail.com">auminterieurs@gmail.com</a></li>
+          <li><a id="footer-phone" href="tel:+919879960015">+91 9879960015</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio Hours</h4>
+        <ul>
+          <li id="footer-hours">Mon — Sat, 10am – 7pm</li>
+          <li id="footer-address">Rajkot, Gujarat, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> DS Designs</span>
+      <a href="admin.html" target="_blank" rel="noopener">Admin</a>
+      <span id="footer-tagline">Architecture · Interiors · Planning</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/projects-data.js"></script>
+<script src="js/site-content.js"></script>
+<script src="js/db.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+
